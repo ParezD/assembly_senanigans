@@ -8,7 +8,18 @@ _start:
     mov rdi, 1
     mov rsi, text
     mov rdx, text_len
+    syscall
 
+    mov rax, 0
+    mov rdi, 0
+    mov rsi, text
+    mov rdx, text_len
+    syscall
+
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, text
+    mov rdx, text_len
     syscall 
 
     mov rax, 60
@@ -18,6 +29,10 @@ _start:
 
 
 section .data
-    text: db "Hello world!", 10
-    text_len equ 13
+    text: db "What do you want to print?"
+    text_len equ 64
+
+
+zero_it:
+    
 
