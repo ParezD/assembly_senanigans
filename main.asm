@@ -9,7 +9,7 @@ _start:
     mov rsi, ask
     mov rdx, asklen
     syscall ;asks what do I wanna print
-
+    
     mov rax, 0
     mov rdi, 0
     mov rsi, readtext
@@ -32,10 +32,8 @@ _start:
 section .data
     ask: db "What do you want to print?", 10
     asklen equ $-ask 
-    readtext: db ""
     text_len equ 64 ;max 64 characters
+    readtext db text_len dup (0)
 
 
-zero_it:
-    
 
